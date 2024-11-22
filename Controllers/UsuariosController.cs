@@ -24,7 +24,7 @@ namespace Hotel.Controllers
             return Ok(allusuarios);
         }
         //Buscar
-        [HttpGet("get-usuario-by-id/{id}")]
+        [HttpGet("Buscar Usuario")]
         public IActionResult GetusuarioById(int id)
         {
             var usuario = _usuariosServices.GetUsuarioById(id);
@@ -39,12 +39,20 @@ namespace Hotel.Controllers
             return Ok();
         }
 
-        //editar 10:41
-        [HttpPut("Editar usuario/{id}")]
+        //editar
+        [HttpPut("Editar usuario")]
         public IActionResult UpdateUsuarioById(int id, [FromBody]UsuarioVM usuario)
         {
             var updateUsuario = _usuariosServices.UpdateUsuarioById(id, usuario);
             return Ok(updateUsuario);
+        }
+
+        //eliminar
+        [HttpDelete("Eliminar Usuario")]
+        public IActionResult DeleteUsuarioById(int id)
+        {
+            _usuariosServices.DeleteUsuarioById(id);
+            return Ok();
         }
     }
 }

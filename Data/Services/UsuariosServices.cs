@@ -46,5 +46,15 @@ namespace Hotel.Data.Services
             }
             return _usuario;
         }
+        //Eliminar
+        public void DeleteUsuarioById(int usuarioid)
+        {
+            var _usuario = _context.Usuarios.FirstOrDefault(n => n.IdUsuario == usuarioid);
+            if(_usuario != null)
+            {
+                _context.Usuarios.Remove(_usuario);
+                _context.SaveChanges();
+            }
+        }
     }
 }
