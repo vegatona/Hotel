@@ -1,4 +1,5 @@
 using Hotel.Data;
+using Hotel.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +35,10 @@ namespace Hotel
             services.AddControllers();
             //configuracion DbContext con sql
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
+            //configurar servicio para ser usado
+            services.AddTransient<UsuariosServices>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hotel", Version = "v1" });
