@@ -16,6 +16,22 @@ namespace Hotel.Controllers
             _usuariosServices = usuariosServices;
         }
 
+        //Listar
+        [HttpGet("Lista de usuarios")]
+        public IActionResult GetAllUsuarios()
+        {
+            var allusuarios = _usuariosServices.GetAllBks();
+            return Ok(allusuarios);
+        }
+        //Buscar
+        [HttpGet("get-usuario-by-id/{id}")]
+        public IActionResult GetusuarioById(int id)
+        {
+            var usuario = _usuariosServices.GetUsuarioById(id);
+            return Ok(usuario);
+        }
+
+        //agregar
         [HttpPost("agregar usuarios")]
         public IActionResult AddUsuario([FromBody]UsuarioVM usuario)
         {

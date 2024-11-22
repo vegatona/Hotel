@@ -1,6 +1,8 @@
 ﻿using Hotel.Data.Models;
 using Hotel.Data.ViewModels;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Hotel.Data.Services
 {
@@ -23,5 +25,10 @@ namespace Hotel.Data.Services
             _context.Usuarios.Add(_usuario);
             _context.SaveChanges();
         }
+
+        //LISTAR
+        public List<Usuario> GetAllBks() => _context.Usuarios.ToList();
+        //buscar
+        public Usuario GetUsuarioById(int usuarioid) => _context.Usuarios.FirstOrDefault(n => n.IdUsuario == usuarioid);
     }
 }
