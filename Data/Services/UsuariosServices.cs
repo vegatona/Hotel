@@ -34,7 +34,7 @@ namespace Hotel.Data.Services
         //Editar
         public Usuario UpdateUsuarioById(int usuarioid, UsuarioVM usuario)
         {
-            var _usuario = _context.Usuarios.FirstOrDefault(n => n == usuarioid);
+            var _usuario = _context.Usuarios.FirstOrDefault(n => n.IdUsuario == usuarioid);
             if (_usuario != null)
             {
                 _usuario.Nombre = usuario.Nombre;

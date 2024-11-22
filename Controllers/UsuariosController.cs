@@ -39,6 +39,12 @@ namespace Hotel.Controllers
             return Ok();
         }
 
-        //editar https://drive.google.com/file/d/1vRsbfjwLuPAYOn81joh7Ij7KXw8D-JGi/view 10:41
+        //editar 10:41
+        [HttpPut("Editar usuario/{id}")]
+        public IActionResult UpdateUsuarioById(int id, [FromBody]UsuarioVM usuario)
+        {
+            var updateUsuario = _usuariosServices.UpdateUsuarioById(id, usuario);
+            return Ok(updateUsuario);
+        }
     }
 }
