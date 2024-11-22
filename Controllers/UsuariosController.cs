@@ -38,5 +38,7 @@ namespace Hotel.Controllers
             _usuariosServices.AddUsuario(usuario);
             return Ok();
         }
+
+        //editar https://drive.google.com/file/d/1vRsbfjwLuPAYOn81joh7Ij7KXw8D-JGi/view 10:41
     }
 }

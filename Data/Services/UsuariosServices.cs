@@ -13,6 +13,7 @@ namespace Hotel.Data.Services
         {
             _context = context;
         }
+        //agregar nuevo usuario
         public void AddUsuario(UsuarioVM usuario)
         {
             var _usuario = new Usuario()
@@ -30,5 +31,20 @@ namespace Hotel.Data.Services
         public List<Usuario> GetAllBks() => _context.Usuarios.ToList();
         //buscar
         public Usuario GetUsuarioById(int usuarioid) => _context.Usuarios.FirstOrDefault(n => n.IdUsuario == usuarioid);
+        //Editar
+        public Usuario UpdateUsuarioById(int usuarioid, UsuarioVM usuario)
+        {
+            var _usuario = _context.Usuarios.FirstOrDefault(n => n == usuarioid);
+            if (_usuario != null)
+            {
+                _usuario.Nombre = usuario.Nombre;
+                _usuario.Apellido = usuario.Apellido;
+                _usuario.CURP = usuario.CURP;
+                _usuario.NumTel = usuario.NumTel;
+
+                _context.SaveChanges();
+            }
+            return _usuario;
+        }
     }
 }
