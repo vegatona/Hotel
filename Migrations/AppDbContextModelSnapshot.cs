@@ -28,6 +28,9 @@ namespace Hotel.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Disponible")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Precio")
                         .HasColumnType("int");
 
@@ -52,7 +55,7 @@ namespace Hotel.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Precio")
+                    b.Property<int>("NumTel")
                         .HasColumnType("int");
 
                     b.HasKey("IdUsuario");

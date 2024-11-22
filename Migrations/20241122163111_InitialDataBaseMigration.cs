@@ -13,7 +13,8 @@ namespace Hotel.Migrations
                     IdHabitacion = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Precio = table.Column<int>(type: "int", nullable: false)
+                    Precio = table.Column<int>(type: "int", nullable: false),
+                    Disponible = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,7 +30,7 @@ namespace Hotel.Migrations
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Apellido = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CURP = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Precio = table.Column<int>(type: "int", nullable: false)
+                    NumTel = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

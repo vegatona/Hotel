@@ -9,6 +9,6 @@ namespace Hotel.Data.Models
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string CURP { get; set; }
-        public int Precio { get; set; }
+        public int NumTel { get; set; }
     }
 }

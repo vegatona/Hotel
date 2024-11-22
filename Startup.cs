@@ -60,6 +60,7 @@ namespace Hotel
             {
                 endpoints.MapControllers();
             });
+            AppDbInitializer.Seed(app);
         }
     }
 }
