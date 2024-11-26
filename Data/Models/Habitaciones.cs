@@ -12,5 +12,6 @@ namespace Hotel.Data.Models
         public int Precio { get; set; }
 
         public bool Disponible { get; set; }
+
     }
 }

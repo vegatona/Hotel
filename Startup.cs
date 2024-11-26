@@ -38,6 +38,7 @@ namespace Hotel
 
             //configurar servicio para ser usado
             services.AddTransient<UsuariosServices>();
+            services.AddTransient<HabitacionesServices>();
 
             services.AddSwaggerGen(c =>
             {
