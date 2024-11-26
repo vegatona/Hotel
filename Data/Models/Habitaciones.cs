@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Hotel.Data.Models
 {
@@ -13,5 +14,7 @@ namespace Hotel.Data.Models
 
         public bool Disponible { get; set; }
 
+        // propiedades de navegacion
+        public List<Reservaciones> Reservaciones { get; set; }
     }
 }

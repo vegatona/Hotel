@@ -11,5 +11,8 @@ namespace Hotel.Data.Models
         public string Apellido { get; set; }
         public string CURP { get; set; }
         public int NumTel { get; set; }
+
+        // propiedades de navegacion
+        public List<Reservaciones> Reservaciones { get;set; }
     }
 }
